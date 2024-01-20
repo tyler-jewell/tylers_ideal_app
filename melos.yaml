@@ -1,0 +1,5 @@
+name: velocity_x_agent_builder_repo
+
+packages:
+  - packages/*
+  - app

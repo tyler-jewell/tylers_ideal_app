@@ -1,4 +1,4 @@
-name: vx_agent_builder
+name: app
 description: "A sample app for helping train the VelocityX Agent."
 publish_to: 'none'
 version: 0.0.1
