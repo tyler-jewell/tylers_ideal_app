@@ -3,5 +3,23 @@
         "goldens",
         "Pawan",
         "vxstate"
-    ]
+    ],
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+          80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+      },
+      "editor.accessibilitySupport": "off",
+      "git.confirmSync": false,
+      "redhat.telemetry.enabled": true,
+      "window.zoomLevel": 1,
+      "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+      }
 }
