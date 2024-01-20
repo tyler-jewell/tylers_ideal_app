@@ -1,7 +1,7 @@
 name: velocity_x_agent_builder_repo
 
 packages:
-  - packages/*
+  - packages/**
   - app
 
 
@@ -10,3 +10,4 @@ scripts:
   test: melos exec -- flutter test
   analyze: melos exec -- flutter analyze
   format: melos exec -- dart format .
+  all: melos test && melos analyze && melos format

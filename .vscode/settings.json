@@ -1,8 +1,10 @@
 {
     "cSpell.words": [
-        "goldens",
-        "Pawan",
-        "vxstate"
+      "endtemplate",
+      "goldens",
+      "mocktail",
+      "Pawan",
+      "vxstate"
     ],
     "[dart]": {
         "editor.formatOnSave": true,
