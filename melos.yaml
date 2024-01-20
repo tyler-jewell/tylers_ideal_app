@@ -7,3 +7,4 @@ packages:
 
 scripts:
   update-goldens: melos exec -- flutter test --update-goldens
+  test: melos exec -- flutter test
