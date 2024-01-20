@@ -18,8 +18,8 @@ class FetchDataMutation extends VxMutation<MyStore> {
     store!.requestStatus = VxStatus.loading;
     store!.data = 'Data fetched successfully: ${store!.data}';
     store!.requestStatus = VxStatus.error;
-    store!.requestStatus = VxStatus.none;
-    store!.requestStatus = VxStatus.success;
+    // store!.requestStatus = VxStatus.none;
+    // store!.requestStatus = VxStatus.success;
   }
 }
 
