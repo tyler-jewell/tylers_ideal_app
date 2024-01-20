@@ -1,0 +1,22 @@
+name: vx_agent_builder
+description: "A sample app for helping train the VelocityX Agent."
+publish_to: 'none'
+version: 0.0.1
+
+environment:
+  sdk: '>=3.2.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  velocity_x: ^4.1.2
+  vxstate: ^2.3.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^5.1.0
+
+flutter:
+  uses-material-design: true
