@@ -1,4 +1,2 @@
-/// A Very Good Project created by Very Good CLI.
+/// The user data object.
 library user;
-
-export 'src/user.dart';
