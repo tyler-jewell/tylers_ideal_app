@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:vx_agent_builder/main.dart' as app;
 import 'package:vx_agent_builder/pages/pages.dart';
 import 'package:vx_agent_builder/stores/stores.dart';
-
-import 'lib/main.dart' as app;
 
 /// End-to-end test:
 /// 1. Starts the app.
