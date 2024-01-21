@@ -6,8 +6,8 @@ packages:
 
 
 scripts:
-  update-goldens: melos exec -- flutter test --update-goldens
-  test: melos exec -- flutter test
+  update-goldens: melos exec -- flutter test test.dart --update-goldens
+  test: melos exec -- flutter test test.dart
   analyze: melos exec -- flutter analyze
   format: melos exec -- dart format .
   all: melos test && melos analyze && melos format
