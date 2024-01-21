@@ -9,8 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  user:
-    path: ../packages/data/user
+  user_data:
+    path: ../packages/user_data
   velocity_x: ^4.1.2
   vxstate: ^2.3.0
 

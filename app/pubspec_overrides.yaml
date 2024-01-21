@@ -1,4 +1,0 @@
-# melos_managed_dependency_overrides: user
-dependency_overrides:
-  user:
-    path: ../packages/data/user

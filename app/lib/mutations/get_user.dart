@@ -1,5 +1,4 @@
 import 'package:app/store.dart';
-import 'package:user/user.dart';
 import 'package:vxstate/vxstate.dart';
 
 /// Get user.

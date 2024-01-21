@@ -10,4 +10,5 @@ scripts:
   test: melos exec -- flutter test test.dart --coverage
   analyze: melos exec -- flutter analyze
   format: melos exec -- dart format .
+  build: melos exec --scope=user_data -- protoc --dart_out=grpc:lib -Ilib lib/user.proto
   all: melos test && melos analyze && melos format
