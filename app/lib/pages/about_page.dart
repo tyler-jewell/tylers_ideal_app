@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 /// About page.
@@ -13,13 +12,6 @@ class AboutPage extends StatelessWidget {
       appBar: AppBar(title: 'About'.text.make()),
       body: [
         'VelocityX Example App'.text.xl2.bold.makeCentered().py16(),
-        ElevatedButton(
-          onPressed: () async {
-            const docsUrl = 'https://velocityx.dev/docs/install';
-            await launchUrl(Uri.parse(docsUrl), webOnlyWindowName: '_self');
-          },
-          child: 'Visit VelocityX'.text.make(),
-        ).centered(),
       ].vStack(alignment: MainAxisAlignment.center),
     );
   }
