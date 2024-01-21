@@ -4,6 +4,7 @@
       "endtemplate",
       "goldens",
       "Ilib",
+      "lcov",
       "mocktail",
       "Pawan",
       "pbenum",

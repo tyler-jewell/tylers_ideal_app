@@ -1,8 +1,7 @@
 name: velocity_x_agent_builder_repo
 
 packages:
-  - packages/**
-  - app
+  - .
 
 
 scripts:
@@ -10,9 +9,9 @@ scripts:
   test: melos exec -- flutter test test.dart --coverage
   analyze: melos exec -- flutter analyze
   format: melos exec -- dart format .
-  build: melos exec --scope=user_data -- protoc --dart_out=grpc:lib -Ilib lib/user.proto
+  build: melos exec -- protoc --dart_out=grpc:lib -Ilib lib/data/user/user.proto
   all: melos test && melos analyze && melos format
-  coverage: melos exec --scope=user_data -- flutter test test.dart --coverage
+  coverage: melos exec -- flutter test test.dart --coverage
   # && lcov --extract coverage/lcov.info "./lib/user.pb.dart" --output-file coverage/user_lcov.info 
   # && awk -F":" '/LF:/ {total=$2} /LH:/ {hit=$2} END {print hit/total}' coverage/user_lcov.info > coverage/coverage.txt
 
