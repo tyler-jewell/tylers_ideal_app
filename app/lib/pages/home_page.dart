@@ -29,17 +29,15 @@ class HomePage extends StatelessWidget {
           builder: (_, store, status) => switch (status) {
             VxStatus.loading => 'loading...',
             _ => store.user.name.isNotEmpty
-                ? 'data: ${store.user.name}'
+                ? 'username: ${store.user.name}'
                 : 'no data',
           }
               .text
               .xl2
               .make(),
         ).p4(),
-        ElevatedButton(
-          onPressed: GetUser.new,
-          child: 'Get user'.text.make(),
-        ).p12(),
+        ElevatedButton(onPressed: GetUser.new, child: 'Get user'.text.make())
+            .p12(),
       ].vStack(alignment: MainAxisAlignment.center).centered(),
     );
   }
