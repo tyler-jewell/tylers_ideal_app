@@ -7,7 +7,7 @@ packages:
 
 scripts:
   update-goldens: melos exec -- flutter test test.dart --update-goldens
-  test: melos exec -- flutter test test.dart
+  test: melos exec -- flutter test test.dart --coverage
   analyze: melos exec -- flutter analyze
   format: melos exec -- dart format .
   all: melos test && melos analyze && melos format
