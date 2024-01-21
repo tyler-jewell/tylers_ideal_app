@@ -1,2 +1,1 @@
-/// The user data object.
-library user;
+export 'user.pb.dart';
