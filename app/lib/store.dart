@@ -1,3 +1,4 @@
+import 'package:user_data/user.pb.dart';
 import 'package:vxstate/vxstate.dart';
 
 /// Store definition
