@@ -8,4 +8,7 @@ import 'package:vxstate/vxstate.dart';
 class AppStore extends VxStore {
   /// The user
   User user = User();
+
+  /// The current index
+  int currentIndex = 0;
 }
