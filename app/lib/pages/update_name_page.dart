@@ -23,7 +23,7 @@ class UpdateNamePage extends StatelessWidget {
             labelText: 'Name',
             hintText: 'Enter your name',
           ),
-        ).p12(),
+        ).px64(),
 
         /// Submit button
         ElevatedButton(
