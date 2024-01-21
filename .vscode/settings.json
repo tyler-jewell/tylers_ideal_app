@@ -31,5 +31,6 @@
       "window.zoomLevel": 1,
       "terminal.integrated.env.osx": {
         "FIG_NEW_SESSION": "1"
-      }
+      },
+      "coverage-gutters.coverageBaseDir": "app/coverage"
 }
