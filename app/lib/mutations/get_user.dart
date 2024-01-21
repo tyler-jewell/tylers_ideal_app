@@ -14,8 +14,5 @@ class GetUser extends VxMutation<AppStore> {
     store?.user = User()
       ..id = '1234'
       ..name = 'John Doe';
-
-    /// Call the set user name which will update user's name
-    // next(UpdateName.new);
   }
 }
