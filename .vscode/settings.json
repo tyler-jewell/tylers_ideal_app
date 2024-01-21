@@ -6,6 +6,8 @@
       "Ilib",
       "mocktail",
       "Pawan",
+      "pbenum",
+      "pbgrpc",
       "pbjson",
       "proto",
       "protobuf",
