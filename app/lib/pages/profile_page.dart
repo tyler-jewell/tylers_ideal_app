@@ -11,21 +11,24 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return [
-      VxBuilder<AppStore>(
-        mutations: const {GetUser, UpdateName},
-        builder: (context, store, status) {
-          return 'current name: ${store.user.name}'
-              .text
-              .xl2
-              .makeCentered()
-              .py16();
-        },
-      ),
-      ElevatedButton(
-        onPressed: () => context.nextPage(const UpdateNamePage()),
-        child: 'Update name'.text.make(),
-      ).p12(),
-    ].vStack(alignment: MainAxisAlignment.center).centered();
+    return Scaffold(
+      appBar: AppBar(title: 'Profile page'.text.make()),
+      body: [
+        VxBuilder<AppStore>(
+          mutations: const {GetUser, UpdateName},
+          builder: (context, store, status) {
+            return 'current name: ${store.user.name}'
+                .text
+                .xl2
+                .makeCentered()
+                .py16();
+          },
+        ),
+        ElevatedButton(
+          onPressed: () => context.nextPage(const UpdateNamePage()),
+          child: 'Update name'.text.make(),
+        ).p12(),
+      ].vStack(alignment: MainAxisAlignment.center).centered(),
+    );
   }
 }
