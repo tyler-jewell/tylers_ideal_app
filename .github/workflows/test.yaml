@@ -1,0 +1,21 @@
+name: Run Tests
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        cache: true
+        cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' 
+
+    - name: Run Tests
+      run: melos run all
