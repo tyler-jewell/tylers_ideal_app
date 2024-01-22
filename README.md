@@ -40,6 +40,29 @@ melos test
 melos all
 ```
 
+## Note on golden testing
+
+There is a bug where local goldens on macos are slightly different than CI linux machines.
+This causes CI tests to fail in GitHub. 
+
+GitHub issue: https://github.com/eBay/flutter_glove_box/issues/79
+
+The work-around right now is to run the golden tests and golden generations to run on a light-weight docker container. 
+
+Because of this, if you want to run tests locally, you will need to setup docker. 
+
+To generate goldens locally (using a linux docker image), run:
+
+```sh
+docker run vx_example_image bash -c "melos update-goldens"
+```
+
+If you want to test locally with what will be ran in GitHub actions, run:
+
+```sh
+docker run vx_example_image bash -c "melos all"
+```
+
 ## Application Structure
 
 The application is structured as follows:
