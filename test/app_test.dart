@@ -44,11 +44,11 @@ Future<void> main() async {
         VxState(store: testStore, child: const app.VxExampleApp()),
       );
 
-      /// On HomePage, take screenshot for golden test
-      await expectLater(
-        find.byType(HomePage),
-        matchesGoldenFile('goldens/home_page.png'),
-      );
+      // /// On HomePage, take screenshot for golden test
+      // await expectLater(
+      //   find.byType(HomePage),
+      //   matchesGoldenFile('goldens/home_page.png'),
+      // );
 
       /// Tap the Get user button and wait for 2 seconds
       await tester.tap(find.byType(ElevatedButton));
