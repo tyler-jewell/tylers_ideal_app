@@ -29,11 +29,10 @@ class UserServiceClient extends $grpc.Client {
       '/user.UserService/ReadUser',
       ($0.UserId value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.User.fromBuffer(value));
-  static final _$updateUser =
-      $grpc.ClientMethod<$0.UpdateUserRequest, $0.UserResponse>(
-          '/user.UserService/UpdateUser',
-          ($0.UpdateUserRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateUser = $grpc.ClientMethod<$0.UpdateUserRequest, $0.UserResponse>(
+      '/user.UserService/UpdateUser',
+      ($0.UpdateUserRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$deleteUser = $grpc.ClientMethod<$0.UserId, $0.UserResponse>(
       '/user.UserService/DeleteUser',
       ($0.UserId value) => value.writeToBuffer(),
@@ -42,25 +41,22 @@ class UserServiceClient extends $grpc.Client {
   UserServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options, interceptors: interceptors);
+      : super(channel, options: options,
+        interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.UserResponse> createUser($0.User request,
-      {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.UserResponse> createUser($0.User request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.User> readUser($0.UserId request,
-      {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.User> readUser($0.UserId request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$readUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> updateUser($0.UpdateUserRequest request,
-      {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.UserResponse> updateUser($0.UpdateUserRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> deleteUser($0.UserId request,
-      {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.UserResponse> deleteUser($0.UserId request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteUser, request, options: options);
   }
 }
@@ -100,31 +96,24 @@ abstract class UserServiceBase extends $grpc.Service {
         ($0.UserResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.UserResponse> createUser_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.User> request) async {
+  $async.Future<$0.UserResponse> createUser_Pre($grpc.ServiceCall call, $async.Future<$0.User> request) async {
     return createUser(call, await request);
   }
 
-  $async.Future<$0.User> readUser_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.UserId> request) async {
+  $async.Future<$0.User> readUser_Pre($grpc.ServiceCall call, $async.Future<$0.UserId> request) async {
     return readUser(call, await request);
   }
 
-  $async.Future<$0.UserResponse> updateUser_Pre($grpc.ServiceCall call,
-      $async.Future<$0.UpdateUserRequest> request) async {
+  $async.Future<$0.UserResponse> updateUser_Pre($grpc.ServiceCall call, $async.Future<$0.UpdateUserRequest> request) async {
     return updateUser(call, await request);
   }
 
-  $async.Future<$0.UserResponse> deleteUser_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.UserId> request) async {
+  $async.Future<$0.UserResponse> deleteUser_Pre($grpc.ServiceCall call, $async.Future<$0.UserId> request) async {
     return deleteUser(call, await request);
   }
 
-  $async.Future<$0.UserResponse> createUser(
-      $grpc.ServiceCall call, $0.User request);
+  $async.Future<$0.UserResponse> createUser($grpc.ServiceCall call, $0.User request);
   $async.Future<$0.User> readUser($grpc.ServiceCall call, $0.UserId request);
-  $async.Future<$0.UserResponse> updateUser(
-      $grpc.ServiceCall call, $0.UpdateUserRequest request);
-  $async.Future<$0.UserResponse> deleteUser(
-      $grpc.ServiceCall call, $0.UserId request);
+  $async.Future<$0.UserResponse> updateUser($grpc.ServiceCall call, $0.UpdateUserRequest request);
+  $async.Future<$0.UserResponse> deleteUser($grpc.ServiceCall call, $0.UserId request);
 }

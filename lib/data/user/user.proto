@@ -6,7 +6,6 @@ package user;
 message User {
   string id = 1;
   string name = 2;
-  int32 age = 3;
 }
 
 // The UserService provides CRUD operations for users.

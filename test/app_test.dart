@@ -22,7 +22,15 @@ Future<void> main() async {
 
   group('End-to-end test', () {
     testWidgets('start app', (widgetTester) async {
+      final baseStore = BaseStore();
+
       app.main();
+
+      /// check that store is created
+      expect(baseStore.currentIndex, 0);
+
+      /// check the user data.
+      expect(baseStore.user.id, '');
     });
     testWidgets('End-to-end test', (WidgetTester tester) async {
       /// Start the app
