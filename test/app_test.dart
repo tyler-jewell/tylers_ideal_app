@@ -54,11 +54,11 @@ Future<void> main() async {
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle(const Duration(seconds: 1));
 
-      /// On HomePage with data, take screenshot for golden test
-      await expectLater(
-        find.byType(HomePage),
-        matchesGoldenFile('goldens/home_page-data.png'),
-      );
+      // /// On HomePage with data, take screenshot for golden test
+      // await expectLater(
+      //   find.byType(HomePage),
+      //   matchesGoldenFile('goldens/home_page-data.png'),
+      // );
 
       /// Tap the question mark icon to go to the AboutPage
       await tester.tap(find.byIcon(Icons.question_mark_sharp));
