@@ -7,25 +7,33 @@ import 'package:vx_agent_builder/pages/pages.dart';
 import 'package:vx_agent_builder/stores/base_store.dart';
 import 'package:vxstate/vxstate.dart';
 
+const screenWidth = 390.0;
+const screenHeight = 844.0;
+
+const scenarioConstraints = BoxConstraints(
+  maxWidth: screenWidth,
+  maxHeight: screenHeight,
+  minWidth: screenWidth,
+  minHeight: screenHeight,
+);
+
 void main() {
-  group('ListTile Golden Tests', () {
-    goldenTest(
-      'renders correctly',
-      fileName: 'list_tile',
-      builder: () => GoldenTestGroup(
-        scenarioConstraints: const BoxConstraints(
-          maxWidth: 390,
-          maxHeight: 844,
-          minWidth: 390,
-          minHeight: 844,
+  goldenTest(
+    'Golden',
+    fileName: 'goldens',
+    whilePerforming: (tester) async {
+      await tester.tap(find.byKey(const Key('bottom-nav-profile')));
+      await tester.pumpAndSettle();
+      await tester.
+    },
+    builder: () => GoldenTestGroup(
+      scenarioConstraints: scenarioConstraints,
+      children: [
+        GoldenTestScenario(
+          name: 'initial',
+          child: VxState(store: BaseStore(), child: const VxExampleApp()),
         ),
-        children: [
-          GoldenTestScenario(
-            name: 'with title',
-            child: VxState(store: BaseStore(), child: const VxExampleApp()),
-          ),
-        ],
-      ),
-    );
-  });
+      ],
+    ),
+  );
 }

@@ -32,9 +32,12 @@ class VxExampleApp extends StatelessWidget {
                 : const ProfilePage(),
             bottomNavigationBar: BottomNavigationBar(
               items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
+                  icon: Icon(key: Key('bottom-nav-home'), Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(key: Key('bottom-nav-profile'), Icons.person),
                   label: 'Profile',
                 ),
               ],
