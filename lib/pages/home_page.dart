@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
         title: 'Home page'.text.make(),
         actions: [
           IconButton(
+            key: const Key('about-button'),
             icon: const Icon(Icons.question_mark_sharp),
             onPressed: () => context.nextPage(const AboutPage()),
           ),
@@ -36,8 +37,11 @@ class HomePage extends StatelessWidget {
               .xl2
               .make(),
         ).p4(),
-        ElevatedButton(onPressed: GetUser.new, child: 'Get user'.text.make())
-            .p12(),
+        ElevatedButton(
+          key: const Key('get-data-button'),
+          onPressed: GetUser.new,
+          child: 'Get user'.text.make(),
+        ).p12(),
       ].vStack(alignment: MainAxisAlignment.center).centered(),
     );
   }

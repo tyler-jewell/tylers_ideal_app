@@ -18,6 +18,7 @@ class UpdateNamePage extends StatelessWidget {
       body: [
         /// Text form field
         TextFormField(
+          key: const Key('update-name-form'),
           controller: controller,
           decoration: const InputDecoration(
             labelText: 'Name',
@@ -27,6 +28,7 @@ class UpdateNamePage extends StatelessWidget {
 
         /// Submit button
         ElevatedButton(
+          key: const Key('update-name-submit'),
           onPressed: () {
             UpdateName(controller.text);
             Navigator.pop(context);

@@ -25,6 +25,7 @@ class ProfilePage extends StatelessWidget {
           },
         ),
         ElevatedButton(
+          key: const Key('update-name-button'),
           onPressed: () => context.nextPage(const UpdateNamePage()),
           child: 'Update name'.text.make(),
         ).p12(),
