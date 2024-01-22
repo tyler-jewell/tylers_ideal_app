@@ -1,4 +1,4 @@
-name: Run Tests
+name: Test Example App
 
 on:
   push:
@@ -6,6 +6,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    concurrency:
+      group: 'test-example-app'
 
     steps:
     - name: Checkout Repo
