@@ -57,4 +57,30 @@ void main() {
     final user = User(id: 'test', name: 'test')..clearName();
     expect(user.name, '');
   });
+
+  /// User createEmptyInstance() => create();
+  test('User.createEmptyInstance', () async {
+    expect(User().createEmptyInstance(), isA<User>());
+  });
+
+  /// static User getDefault() => _defaultInstance ??= 
+  /// $pb.GeneratedMessage.$_defaultFor<User>(create);
+  test('User.getDefault', () async {
+    expect(User.getDefault(), isA<User>());
+  });
+
+  /// $core.bool hasId() => $_has(0);
+  test('User.hasId', () async {
+    expect(User(id: 'test', name: 'test').hasId(), true);
+  });
+
+  /// $core.bool hasName() => $_has(1);
+  test('User.hasName', () async {
+    expect(User(id: 'test', name: 'test').hasName(), true);
+  });
+
+  /// static $pb.PbList<User> createRepeated() => $pb.PbList<User>();
+  test('User.createRepeated', () async {
+    expect(User.createRepeated(), isA<PbList<User>>());
+  });
 }
