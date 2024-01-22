@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:vx_agent_builder/data/data.dart';
 import 'package:vx_agent_builder/main.dart' as app;
 import 'package:vx_agent_builder/pages/pages.dart';
 import 'package:vx_agent_builder/stores/stores.dart';
@@ -16,13 +17,18 @@ import 'package:vx_agent_builder/stores/stores.dart';
 /// 7. Enters 'Test Name' into the TextFormField and taps the button.
 /// 8. Expects the new name to be displayed on the ProfilePage.
 
+const uid = 'test-id';
+const name = 'Test User';
+
+final testStore = BaseStore()..user = User(id: uid, name: name);
+
 Future<void> main() async {
   // Load app fonts to ensure goldens have actual text.
   await loadAppFonts();
 
   group('End-to-end test', () {
     testWidgets('start app', (widgetTester) async {
-      final baseStore = BaseStore();
+      final baseStore = BaseStore()..user = User(id: uid, name: name);
 
       app.main();
 
@@ -30,12 +36,12 @@ Future<void> main() async {
       expect(baseStore.currentIndex, 0);
 
       /// check the user data.
-      expect(baseStore.user.id, '');
+      expect(baseStore.user.id, uid);
     });
     testWidgets('End-to-end test', (WidgetTester tester) async {
       /// Start the app
       await tester.pumpWidget(
-        VxState(store: BaseStore(), child: const app.VxExampleApp()),
+        VxState(store: testStore, child: const app.VxExampleApp()),
       );
 
       /// On HomePage, take screenshot for golden test

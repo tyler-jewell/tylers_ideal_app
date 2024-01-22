@@ -11,8 +11,6 @@ class GetUser extends VxMutation<BaseStore> {
     await Future<void>.delayed(const Duration(seconds: 1));
 
     /// Set the in-memory user.
-    store?.user = User()
-      ..id = '1234'
-      ..name = 'John Doe';
+    store?.user = User(id: '1234', name: 'Remote user');
   }
 }

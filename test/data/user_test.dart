@@ -1,86 +1,40 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:protobuf/protobuf.dart';
-import 'package:vx_agent_builder/data/user/user.dart';
+import 'package:vx_agent_builder/data/user.dart';
+
+const testId = 'test-id';
+const testName = 'Test User';
 
 void main() {
-  test('User.writeToJsonMap', () async {
-    expect(
-      User(id: 'test', name: 'test').writeToJsonMap(),
-      {'1': 'test', '2': 'test'},
-    );
+  /// Can instantiate.
+  test('Can instantiate', () {
+    final user = User(id: testId, name: testName);
+    expect(user.id, testId);
+    expect(user.name, testName);
   });
 
-  test('User.create', () async {
-    expect(User.create(), isA<User>());
+  /// fromJson() returns a User instance.
+  test('fromJson() returns a User instance', () {
+    final user = User.fromJson({'id': testId, 'name': testName});
+    expect(user.id, testId);
+    expect(user.name, testName);
   });
 
-  test('User.fromJson', () async {
-    expect(
-      User.fromJson('{"1": "test", "2": "test"}').name,
-      'test',
-    );
+  /// toJson() returns a JSON map.
+  test('toJson() returns a JSON map', () {
+    final user = User(id: testId, name: testName);
+    final json = user.toJson();
+    expect(json['id'], testId);
+    expect(json['name'], testName);
   });
 
-  test('User.fromBuffer', () async {
-    expect(
-      User.fromBuffer([
-        10,
-        4,
-        116,
-        101,
-        115,
-        116,
-        18,
-        4,
-        116,
-        101,
-        115,
-        116,
-      ]).name,
-      'test',
-    );
-  });
+  /// Copy with returns a new User instance with the given fields replaced.
+  test('copyWith returns a new User instance with the given fields replaced',
+      () {
+    final user = User(id: testId, name: testName);
+    final user2 = user.copyWith(name: 'New Name');
+    expect(user2.id, testId);
+    expect(user2.name, 'New Name');
 
-  test('User.deepCopy', () async {
-    expect(
-      User(id: 'test', name: 'test').deepCopy().name,
-      'test',
-    );
-  });
-
-  test('User.clearId', () async {
-    final user = User(id: 'test', name: 'test')..clearId();
-    expect(user.id, '');
-  });
-
-  test('User.clearName', () async {
-    final user = User(id: 'test', name: 'test')..clearName();
-    expect(user.name, '');
-  });
-
-  /// User createEmptyInstance() => create();
-  test('User.createEmptyInstance', () async {
-    expect(User().createEmptyInstance(), isA<User>());
-  });
-
-  /// static User getDefault() => _defaultInstance ??= 
-  /// $pb.GeneratedMessage.$_defaultFor<User>(create);
-  test('User.getDefault', () async {
-    expect(User.getDefault(), isA<User>());
-  });
-
-  /// $core.bool hasId() => $_has(0);
-  test('User.hasId', () async {
-    expect(User(id: 'test', name: 'test').hasId(), true);
-  });
-
-  /// $core.bool hasName() => $_has(1);
-  test('User.hasName', () async {
-    expect(User(id: 'test', name: 'test').hasName(), true);
-  });
-
-  /// static $pb.PbList<User> createRepeated() => $pb.PbList<User>();
-  test('User.createRepeated', () async {
-    expect(User.createRepeated(), isA<PbList<User>>());
+    expect(user.copyWith().name, user.name);
   });
 }

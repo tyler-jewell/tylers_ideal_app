@@ -11,6 +11,7 @@ class UpdateName extends VxMutation<BaseStore> {
 
   @override
   void perform() {
-    store?.user.name = name;
+    if (store?.user == null || store == null) return;
+    store!.user = store!.user.copyWith(name: name);
   }
 }

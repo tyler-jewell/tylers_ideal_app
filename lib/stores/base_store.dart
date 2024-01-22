@@ -7,7 +7,7 @@ import 'package:vxstate/vxstate.dart';
 ///
 class BaseStore extends VxStore {
   /// The user
-  User user = User();
+  User user = User(id: 'base-user', name: 'User Name');
 
   /// The current index
   int currentIndex = 0;
