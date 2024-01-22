@@ -1,35 +1,60 @@
-
 import 'package:flutter_test/flutter_test.dart';
+import 'package:protobuf/protobuf.dart';
 import 'package:vx_agent_builder/data/user/user.dart';
 
 void main() {
-  test('UserService.CreateUser', () async {
-    // Create a mock UserService
-    final mockUserService = MockUserService();
+  test('User.writeToJsonMap', () async {
+    expect(
+      User(id: 'test', name: 'test').writeToJsonMap(),
+      {'1': 'test', '2': 'test'},
+    );
+  });
 
-    // Create a User
-    final user = User()
-      ..id = '1'
-      ..name = 'Alice';
+  test('User.create', () async {
+    expect(User.create(), isA<User>());
+  });
 
-    // Create a CreateUserRequest
-    final request = CreateUserRequest()
-      ..user = user;
+  test('User.fromJson', () async {
+    expect(
+      User.fromJson('{"1": "test", "2": "test"}').name,
+      'test',
+    );
+  });
 
-    // Create a UserResponse
-    final response = UserResponse()
-      ..message = 'User created successfully';
+  test('User.fromBuffer', () async {
+    expect(
+      User.fromBuffer([
+        10,
+        4,
+        116,
+        101,
+        115,
+        116,
+        18,
+        4,
+        116,
+        101,
+        115,
+        116,
+      ]).name,
+      'test',
+    );
+  });
 
-    // Set up the mock UserService to return the UserResponse when CreateUser is called
-    when(mockUserService.createUser(request)).thenAnswer((_) async => response);
+  test('User.deepCopy', () async {
+    expect(
+      User(id: 'test', name: 'test').deepCopy().name,
+      'test',
+    );
+  });
 
-    // Call CreateUser
-    final result = await mockUserService.createUser(request);
+  test('User.clearId', () async {
+    final user = User(id: 'test', name: 'test')..clearId();
+    expect(user.id, '');
+  });
 
-    // Verify that the result is the expected UserResponse
-    expect(result, equals(response));
-
-    // Verify that CreateUser was called on the mock UserService
-    verify(mockUserService.createUser(request)).called(1);
+  test('User.clearName', () async {
+    final user = User(id: 'test', name: 'test')..clearName();
+    expect(user.name, '');
   });
 }
