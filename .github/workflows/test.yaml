@@ -21,4 +21,4 @@ jobs:
     - run: dart pub global activate melos
     
     - name: Run Tests
-      run: melos run all
+      run: melos all
