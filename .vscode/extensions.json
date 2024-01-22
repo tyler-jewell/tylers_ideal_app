@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "zxh404.vscode-proto3",
-        "flutterando.flutter-coverage"
+        "flutterando.flutter-coverage",
+        "ms-azuretools.vscode-docker"
     ]
 }
