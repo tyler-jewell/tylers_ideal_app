@@ -18,7 +18,7 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
       // being captured/validated by developers running on MacOSX. 
       // We may revisit this in the future if there is a reason to invest
       // in more sophistication
-      // skipGoldenAssertion: () => !Platform.isMacOS,
+      skipGoldenAssertion: () => !Platform.isMacOS,
     ),
   );
 }
