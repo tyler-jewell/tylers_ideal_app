@@ -1,8 +1,6 @@
 import 'package:alchemist/alchemist.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:vx_agent_builder/main.dart';
 import 'package:vx_agent_builder/pages/pages.dart';
 import 'package:vx_agent_builder/stores/base_store.dart';
 import 'package:vxstate/vxstate.dart';
@@ -18,20 +16,29 @@ const scenarioConstraints = BoxConstraints(
 );
 
 void main() {
+  Widget buildPage(Widget page) => VxState(store: BaseStore(), child: page);
+
   goldenTest(
     'Golden',
     fileName: 'goldens',
-    whilePerforming: (tester) async {
-      await tester.tap(find.byKey(const Key('bottom-nav-profile')));
-      await tester.pumpAndSettle();
-      await tester.
-    },
     builder: () => GoldenTestGroup(
       scenarioConstraints: scenarioConstraints,
       children: [
         GoldenTestScenario(
-          name: 'initial',
-          child: VxState(store: BaseStore(), child: const VxExampleApp()),
+          name: 'HomePage',
+          child: buildPage(const HomePage()),
+        ),
+        GoldenTestScenario(
+          name: 'ProfilePage',
+          child: buildPage(const ProfilePage()),
+        ),
+        GoldenTestScenario(
+          name: 'AboutPage',
+          child: buildPage(const AboutPage()),
+        ),
+        GoldenTestScenario(
+          name: 'UpdateNamePage',
+          child: buildPage(const UpdateNamePage()),
         ),
       ],
     ),
