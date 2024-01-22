@@ -8,9 +8,7 @@ ENV PATH="$PATH:$FLUTTER_HOME/bin"
 
 # Clone and configure Flutter
 RUN git clone $FLUTTER_GIT_URL $FLUTTER_HOME -b $FLUTTER_CHANNEL --depth 1 \
-    && flutter config --enable-web \
-    && flutter precache \
-    && flutter doctor
+    && flutter config --enable-web
 
 # activate melos
 RUN dart pub global activate melos
@@ -19,4 +17,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD ["bash", "-c", "docker cp /app/test/goldens ./"]
+CMD ["bash", "-c"]

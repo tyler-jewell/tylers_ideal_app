@@ -8,5 +8,5 @@ scripts:
   test: melos exec -- flutter test --coverage
   analyze: melos exec -- flutter analyze
   format: melos exec -- dart format .
-  build: melos exec -- dart run build_runner build --delete-conflicting-outputs && docker build -t vx_example_image . 
+  build: melos exec -- dart run build_runner build --delete-conflicting-outputs
   all: melos bs && melos build && melos analyze && melos format && melos test

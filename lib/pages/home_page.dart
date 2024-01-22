@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.question_mark_sharp),
             onPressed: () => context.nextPage(const AboutPage()),
-          ).p12(),
+          ),
         ],
       ),
       body: [
