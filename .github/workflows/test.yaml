@@ -15,7 +15,8 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         cache: true
-        cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' 
-
+        cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:'
+    - run: dart pub global activate melos
+    
     - name: Run Tests
       run: melos run all
