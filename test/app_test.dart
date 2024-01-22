@@ -54,21 +54,21 @@ Future<void> main() async {
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle(const Duration(seconds: 1));
 
-      // /// On HomePage with data, take screenshot for golden test
-      // await expectLater(
-      //   find.byType(HomePage),
-      //   matchesGoldenFile('goldens/home_page-data.png'),
-      // );
+      /// On HomePage with data, take screenshot for golden test
+      await expectLater(
+        find.byType(HomePage),
+        matchesGoldenFile('goldens/home_page-data.png'),
+      );
 
       /// Tap the question mark icon to go to the AboutPage
       await tester.tap(find.byIcon(Icons.question_mark_sharp));
       await tester.pumpAndSettle();
 
-      // /// On AboutPage, take screenshot for golden test
-      // await expectLater(
-      //   find.byType(AboutPage),
-      //   matchesGoldenFile('goldens/about_page.png'),
-      // );
+      /// On AboutPage, take screenshot for golden test
+      await expectLater(
+        find.byType(AboutPage),
+        matchesGoldenFile('goldens/about_page.png'),
+      );
 
       /// Tap back button.
       await tester.tap(find.byIcon(Icons.arrow_back));
@@ -81,41 +81,41 @@ Future<void> main() async {
       await tester.tap(find.byIcon(Icons.person));
       await tester.pumpAndSettle();
 
-      // /// On ProfilePage, take screenshot for golden test
-      // await expectLater(
-      //   find.byType(ProfilePage),
-      //   matchesGoldenFile('goldens/profile_page.png'),
-      // );
+      /// On ProfilePage, take screenshot for golden test
+      await expectLater(
+        find.byType(ProfilePage),
+        matchesGoldenFile('goldens/profile_page.png'),
+      );
 
       /// Tap the ElevatedButton to go to the UpdateNamePage
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle();
 
-      // /// On UpdateNamePage, take screenshot for golden test
-      // await expectLater(
-      //   find.byType(UpdateNamePage),
-      //   matchesGoldenFile('goldens/update_name_page.png'),
-      // );
+      /// On UpdateNamePage, take screenshot for golden test
+      await expectLater(
+        find.byType(UpdateNamePage),
+        matchesGoldenFile('goldens/update_name_page.png'),
+      );
 
       /// Enter 'Test Name' into the TextFormField and tap the button
       await tester.enterText(find.byType(TextFormField), 'Test Name');
       await tester.pumpAndSettle();
 
-      // /// On UpdateNamePage with text, take screenshot for golden test
-      // await expectLater(
-      //   find.byType(UpdateNamePage),
-      //   matchesGoldenFile('goldens/update_name_page-text.png'),
-      // );
+      /// On UpdateNamePage with text, take screenshot for golden test
+      await expectLater(
+        find.byType(UpdateNamePage),
+        matchesGoldenFile('goldens/update_name_page-text.png'),
+      );
 
       /// Tap the button
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle();
 
-      // /// On ProfilePage, with updated name, take screenshot for golden test
-      // await expectLater(
-      //   find.byType(ProfilePage),
-      //   matchesGoldenFile('goldens/profile_page-updated.png'),
-      // );
+      /// On ProfilePage, with updated name, take screenshot for golden test
+      await expectLater(
+        find.byType(ProfilePage),
+        matchesGoldenFile('goldens/profile_page-updated.png'),
+      );
     });
   });
 }

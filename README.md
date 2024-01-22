@@ -54,13 +54,15 @@ Because of this, if you want to run tests locally, you will need to setup docker
 To generate goldens locally (using a linux docker image), run:
 
 ```sh
-docker run vx_example_image bash -c "melos update-goldens"
+docker run vx_example_image bash melos bs && melos build && melos update-goldens
 ```
+
+The `melos build` will build the docker image locally. 
 
 If you want to test locally with what will be ran in GitHub actions, run:
 
 ```sh
-docker run vx_example_image bash -c "melos all"
+docker run vx_example_image bash melos bs && melos build && melos test
 ```
 
 ## Application Structure

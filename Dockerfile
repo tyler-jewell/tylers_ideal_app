@@ -19,7 +19,4 @@ WORKDIR /app
 
 COPY . .
 
-# install project dependencies
-RUN melos bootstrap
-
-CMD ["bash", "-c"]
+CMD ["bash", "-c", "docker cp /app/test/goldens ./"]
