@@ -1,4 +1,4 @@
-name: velocity_x_agent_builder_repo
+name: velocity_x
 
 packages:
   - .
