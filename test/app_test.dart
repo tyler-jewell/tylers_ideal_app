@@ -1,7 +1,6 @@
 import 'package:alchemist/alchemist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:golden_toolkit/golden_toolkit.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:vx_agent_builder/pages/pages.dart';
 import 'package:vx_agent_builder/stores/base_store.dart';
@@ -18,9 +17,6 @@ const scenarioConstraints = BoxConstraints(
 );
 
 Future<void> main() async {
-  TestWidgetsFlutterBinding.ensureInitialized();
-  await loadAppFonts();
-
   Widget buildPage(Widget page) => VxState(store: BaseStore(), child: page);
 
   await goldenTest(
