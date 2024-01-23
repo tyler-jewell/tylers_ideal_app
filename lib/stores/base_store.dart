@@ -1,4 +1,4 @@
-import 'package:vx_agent_builder/data/data.dart';
+import 'package:vx_example/data/data.dart';
 import 'package:vxstate/vxstate.dart';
 
 /// Store definition
@@ -6,6 +6,8 @@ import 'package:vxstate/vxstate.dart';
 /// Mutations fetch data from APIs, databases etc. and keep it here.
 ///
 class BaseStore extends VxStore {
+  // TODO(enhancement): starts with empty in-memory user
+  ///
   /// The user
   User user = User(id: 'base-user', name: 'User Name');
 

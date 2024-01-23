@@ -1,5 +1,5 @@
-import 'package:vx_agent_builder/data/data.dart';
-import 'package:vx_agent_builder/stores/stores.dart';
+import 'package:vx_example/data/data.dart';
+import 'package:vx_example/stores/stores.dart';
 import 'package:vxstate/vxstate.dart';
 
 /// Get user.

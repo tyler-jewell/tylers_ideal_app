@@ -1,6 +1,6 @@
-name: vx_agent_builder
+name: vx_example
 version: 0.0.1
-description: A velocity x agent builder package.
+description: A velocity x example app.
 publish_to: 'none'
 
 environment:
@@ -16,13 +16,12 @@ dependencies:
 dev_dependencies:
   alchemist: ^0.7.0
   build_runner: ^2.4.8
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
   golden_toolkit: ^0.15.0
   json_serializable: ^6.7.1
   melos: ^4.0.0
-  mockito: ^5.4.4
   very_good_analysis: ^5.1.0
 
 flutter:

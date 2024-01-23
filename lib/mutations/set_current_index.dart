@@ -1,4 +1,4 @@
-import 'package:vx_agent_builder/stores/stores.dart';
+import 'package:vx_example/stores/stores.dart';
 import 'package:vxstate/vxstate.dart';
 
 /// Set current index mutation

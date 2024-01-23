@@ -2,8 +2,8 @@ import 'package:alchemist/alchemist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:vx_agent_builder/pages/pages.dart';
-import 'package:vx_agent_builder/stores/base_store.dart';
+import 'package:vx_example/pages/pages.dart';
+import 'package:vx_example/stores/base_store.dart';
 import 'package:vxstate/vxstate.dart';
 
 const screenWidth = 390.0;

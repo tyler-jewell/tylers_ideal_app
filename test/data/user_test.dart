@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:vx_agent_builder/data/user.dart';
+import 'package:vx_example/data/user.dart';
 
 const testId = 'test-id';
 const testName = 'Test User';
