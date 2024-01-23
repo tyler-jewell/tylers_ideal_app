@@ -23,12 +23,4 @@ jobs:
     - run: dart pub global activate melos
     
     - name: Run Tests
-      run: melos bs && melos update-goldens
-
-    - name: Push new goldens
-      run: |
-        git config --global user.email "vx_example@bot.com"
-        git config --global user.name "vx_example_bot"
-        git add .
-        git commit -m "Update goldens"
-        git push
+      run: melos bs && melos test
