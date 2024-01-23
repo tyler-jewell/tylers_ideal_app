@@ -1,10 +1,14 @@
-# VelocityX Example Application
+# Tyler's Ideal App Template
 
-Welcome to the VelocityX example application. This application is designed to showcase the capabilities of the VelocityX library, a minimalist Flutter framework that helps you build applications rapidly. It uses VelocityX for state management (VxState), UI extensions, and more.
+Welcome to Tyler's Ideal App Template. This template is designed to serve as a blueprint for all of Tyler's applications. It leverages the power of the VelocityX library, a minimalist Flutter framework that aids in rapid application development. The template uses VelocityX for state management (VxState), UI extensions, and more.
 
-## Application Overview
+## Template Overview
 
-The application is a simple user management system. It uses `VxState` for state management, which allows us to manage the state of our application in a predictable way. The UI is built using various VelocityX extensions, which provide a wide range of pre-styled widgets and utility functions for building responsive layouts.
+The template is a robust user management system. It employs `VxState` for state management, enabling predictable state management for our applications. The UI is constructed using various VelocityX extensions, offering a broad range of pre-styled widgets and utility functions for building responsive layouts.
+
+## Using the Template
+
+This template uses Melos to manage scripts for building, testing, and analyzing the code. Here are some of the scripts you can run:
 
 ## Running the Application
 
