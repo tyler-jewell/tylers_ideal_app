@@ -15,10 +15,12 @@ const scenarioConstraints = BoxConstraints(
   minHeight: screenHeight,
 );
 
-void main() {
+Future<void> main() async {
+  await loadFonts();
+
   Widget buildPage(Widget page) => VxState(store: BaseStore(), child: page);
 
-  goldenTest(
+  await goldenTest(
     'Golden',
     fileName: 'goldens',
     builder: () => GoldenTestGroup(
