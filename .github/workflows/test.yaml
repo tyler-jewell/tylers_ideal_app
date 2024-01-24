@@ -1,4 +1,4 @@
-name: Test Example App
+name: Test Ideal App
 
 on:
   push:
@@ -9,18 +9,51 @@ jobs:
     permissions:
       contents: write
     concurrency:
-      group: 'test-example-app'
+      group: 'test-ideal-app'
 
     steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v4
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - run: |
+          git config --global user.email "ideal@bot.com"
+          git config --global user.name "An ideal bot"
 
-    - name: Setup Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        cache: true
-        cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:'
-    - run: dart pub global activate melos
-    
-    - name: Run Tests
-      run: melos all
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          cache: true
+          cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:'
+
+      - name: Cache dependencies
+        id: flutter-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.lock') }}
+
+      - name: Install melos
+        if: steps.flutter-cache.outputs.cache-hit != 'true'
+        run: dart pub global activate melos
+
+      - name: Install Dependencies
+        run: melos bootstrap
+
+      - name: Update goldens
+        run:  melos update-goldens
+
+      - name: Run tests
+        run: melos test
+
+      - name: fix
+        run: melos fix
+
+      - name: format
+        run: melos format
+
+      - name: analyze
+        run: melos analyze
+
+      - name: Update version
+        run: |
+          melos update-version
+          git push origin HEAD:main --follow-tags

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ideal_app/mutations/mutations.dart';
+import 'package:ideal_app/pages/pages.dart';
+import 'package:ideal_app/stores/stores.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:vx_example/mutations/mutations.dart';
-import 'package:vx_example/pages/pages.dart';
-import 'package:vx_example/stores/stores.dart';
 
 /// The HomePage
 class HomePage extends StatelessWidget {

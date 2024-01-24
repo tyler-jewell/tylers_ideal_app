@@ -1,6 +1,6 @@
-name: vx_example
+name: ideal_app
 version: 0.0.1
-description: A velocity x example app.
+description: An ideal app.
 publish_to: 'none'
 
 environment:

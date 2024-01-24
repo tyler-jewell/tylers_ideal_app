@@ -1,4 +1,4 @@
-import 'package:vx_example/data/data.dart';
+import 'package:ideal_app/data/data.dart';
 import 'package:vxstate/vxstate.dart';
 
 /// Store definition

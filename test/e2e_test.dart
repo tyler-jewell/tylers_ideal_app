@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:vx_example/main.dart' as app;
-import 'package:vx_example/pages/pages.dart';
+import 'package:ideal_app/main.dart' as app;
+import 'package:ideal_app/pages/pages.dart';
 
 void main() {
   testWidgets('Example end-to-end test', (tester) async {

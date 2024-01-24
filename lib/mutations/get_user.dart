@@ -1,5 +1,5 @@
-import 'package:vx_example/data/data.dart';
-import 'package:vx_example/stores/stores.dart';
+import 'package:ideal_app/data/data.dart';
+import 'package:ideal_app/stores/stores.dart';
 import 'package:vxstate/vxstate.dart';
 
 /// Get user.

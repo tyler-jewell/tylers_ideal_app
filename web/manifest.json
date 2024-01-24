@@ -1,6 +1,6 @@
 {
-    "name": "vx_example",
-    "short_name": "vx_example",
+    "name": "ideal_app",
+    "short_name": "ideal_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
